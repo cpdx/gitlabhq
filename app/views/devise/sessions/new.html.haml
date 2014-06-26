@@ -1,20 +1,7 @@
 .login-box
   %h3.page-title Sign in
-  - if ldap_enabled?
-    %ul.nav.nav-tabs
-      %li.active
-        = link_to 'LDAP', '#tab-ldap', 'data-toggle' => 'tab'
-      %li
-        = link_to 'Standard', '#tab-signin', 'data-toggle' => 'tab'
-    .tab-content
-      %div#tab-ldap.tab-pane.active
-        = render partial: 'devise/sessions/new_ldap'
-      %div#tab-signin.tab-pane
-        = render partial: 'devise/sessions/new_base'
 
-  - else
-    = render partial: 'devise/sessions/new_base'
-
+  = render partial: 'devise/sessions/new_ldap'
 
   = render 'devise/sessions/oauth_providers' if devise_mapping.omniauthable?
   %hr
