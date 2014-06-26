@@ -9,8 +9,9 @@
     .tab-content
       %div#tab-ldap.tab-pane.active
         = render partial: 'devise/sessions/new_ldap'
-      %div#tab-signin.tab-pane
-        = render partial: 'devise/sessions/new_base'
+      -# Disable standard sign-in
+      -# %div#tab-signin.tab-pane
+        -# = render partial: 'devise/sessions/new_base'
 
   - else
     = render partial: 'devise/sessions/new_base'
